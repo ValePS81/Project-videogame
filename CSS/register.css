@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: -webkit-linear-gradient(135deg, #ff2e63, #1e4d7b, #00ffea);
+    background: linear-gradient(135deg, #ff2e63,#1e4d7b,#00ffea);
+    background-size: 300% 300%;
+    animation: gradientBG 5s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+section {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #1E4D7B;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 2rem 3rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    transition: 0.3s ease;
+}
+
+.logo:hover img {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.inputbox {
+    position: relative;
+    margin: 20px 0;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #FFFFFF;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.inputbox-fecha {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.inputbox-rol {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.inputbox-rol select option {
+    color: #333;
+    /* Texto negro para las opciones */
+}
+
+.inputbox input,
+.inputbox select {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #FFFFFF;
+    appearance: none;
+}
+
+.inputbox input:focus~label,
+.inputbox input:valid~label,
+.inputbox select:focus~label,
+.inputbox select:valid~label {
+    top: -10px;
+    font-size: 0.85rem;
+    color: #1E4D7B;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    border-radius: 30px;
+    background-color: #1E4D7B;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #163758;
+}
+
+.register {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+    section {
+        padding: 1.5rem;
+    }
+}
