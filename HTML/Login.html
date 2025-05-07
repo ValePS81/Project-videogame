@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login - GameProfession</title>
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
 </head>
 <body>
     <section>
         <form action="">
-            <h1>Login</h1>
+            <div class="logo">
+                <a href="/HTML/Index.html"><img src="/IMG/logo.png" alt="Logo"></a>
+            </div>
             <div class="inputbox">
-                <ion-icon name="lock-closed-outline"></ion-icon>
+                <ion-icon name="person-outline"></ion-icon>
                 <input type="email" required>
                 <label for="">Usuario</label>
             </div>
@@ -23,9 +26,12 @@
 
             <button>Iniciar sesión</button>
             <div class="register">
-                <p>¿No tiene una cuenta? <a href="/HTML/Register.html">Registrarse</a></p>
+                <p>¿No tiene una cuenta? <a href="/HTML/Register.html">¡Regístrate!</a></p>
             </div>
         </form>
     </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
