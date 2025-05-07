@@ -12,9 +12,18 @@ function login() {
     }).then(res => res.json())
         .then(data => {
             if (data.success) {
-                window.location.href = "../HTML/Index.html";
+                Swal.fire({
+                    title: "¡Bienvenido!",
+                    icon: "success"
+                }).then(() => {
+                    window.location.href = "../HTML/Index.html";
+                });
             } else {
-                alert("Usuario o clave incorrectos");
+                Swal.fire({
+                    title: "Oops...",
+                    text: "Vuelva a intentarlo",
+                    icon: "error"
+                });
             }
         });
 }
