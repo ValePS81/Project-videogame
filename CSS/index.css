@@ -1,0 +1,117 @@
+
+
+/* Fuente general */
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f1c;
+    color: #ffffff;
+}
+
+/* Navbar */
+nav {
+    background-color: #1a1a2e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #00ffea;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #00ffea;
+    color: #0f0f1c;
+    border-radius: 8px;
+}
+
+/* Sección Hero */
+.hero {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #00ffea;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Estilo del logo */
+.hero .logo img {
+    width: 150px; 
+    height: auto;
+    margin: 20px 0; /* Espaciado superior e inferior */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 234, 0.5);
+}
+
+/* Sección ¿Cómo se juega? */
+.como-jugar {
+    padding: 50px 20px;
+}
+
+.segmento {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.como-jugar .contenido {
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.como-jugar h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.como-jugar p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Estilo de las imágenes dentro de los segmentos */
+.como-jugar .imagen img {
+    width: 100%; 
+    max-width: 350px; 
+    height: auto; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 234, 0.5);
+}
+
+
+.como-jugar img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 234, 0.5);
+}
