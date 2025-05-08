@@ -27,3 +27,34 @@ function login() {
             }
         });
 }
+
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Previene el envío por defecto del formulario
+
+    const datos = new FormData(this);
+
+    fetch("../PHP/register.php", {
+        method: "POST",
+        body: datos
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            Swal.fire({
+                title: "¡Registro Exitoso!",
+                icon: "success"
+            }).then(() => {
+                window.location.href = "../HTML/Index.html";
+            });
+        } else {
+            Swal.fire({
+                title: "Error",
+                text: "Error al registrar: " + (data.error || "datos inválidos"),
+                icon: "error"
+            });
+        }
+    });
+});
+
+
+
