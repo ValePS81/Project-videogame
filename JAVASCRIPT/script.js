@@ -29,12 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     title: "¡Bienvenido!",
                     icon: "success"
                 }).then(() => {
-                    window.location.href = "../HTML/Index.html";
+                    // Redirigir según el rol
+                    if (data.rol === 'admin') {
+                        window.location.href = "../PHP/Panel_control.php";
+                    } else {
+                        window.location.href = "../HTML/Index.html"; // ruta de usuario normal
+                    }
                 });
             } else {
                 Swal.fire({
                     title: "Oops...",
-                    text: "Vuelva a intentarlo",
+                    text: "Usuario o contraseña incorrectos.",
                     icon: "error"
                 });
             }
