@@ -1,15 +1,28 @@
-function login() {
-    const datos = {
-        usuario: document.getElementById("usuario").value,
-        contraseña: document.getElementById("contraseña").value
-    };
-    fetch("../PHP/login.php", {
-        method: "POST",
-        body: JSON.stringify(datos),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(res => res.json())
+document.addEventListener('DOMContentLoaded', function () {
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('contraseña');
+
+    togglePassword.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        togglePassword.setAttribute('name', type === 'password' ? 'eye-off-outline' : 'eye-outline');
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Detiene el comportamiento por defecto
+
+        const datos = {
+            usuario: document.getElementById("usuario").value,
+            contraseña: document.getElementById("contraseña").value
+        };
+
+        fetch("../PHP/login.php", {
+            method: "POST",
+            body: JSON.stringify(datos),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => res.json())
         .then(data => {
             if (data.success) {
                 Swal.fire({
@@ -26,7 +39,8 @@ function login() {
                 });
             }
         });
-}
+    });
+});
 
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault(); // Previene el envío por defecto del formulario
@@ -55,6 +69,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
         }
     });
 });
+
 
 
 

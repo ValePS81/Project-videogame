@@ -1,5 +1,3 @@
-
-
 /* Fuente general */
 body {
     font-family: 'Orbitron', sans-serif;
@@ -7,111 +5,181 @@ body {
     padding: 0;
     background-color: #0f0f1c;
     color: #ffffff;
+    scroll-behavior: smooth;
 }
 
-/* Navbar */
-nav {
-    background-color: #1a1a2e;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* HEADER COMPLETO */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: #16213e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+/* CONTENEDOR FLEX DEL NAVBAR */
+.navbar-container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul li {
-    margin-right: 20px;
+/* LOGO */
+.logo img {
+  height: 70px;
+  transition: transform 0.3s ease;
+  padding-left: 40px;
+}
+.logo img:hover {
+  transform: scale(1.05);
 }
 
-nav ul li a {
-    color: #00ffea;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
+/* NAVBAR LINKS */
+.navbar {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  padding-right: 70px;
 }
 
-nav ul li a:hover {
-    background-color: #00ffea;
-    color: #0f0f1c;
-    border-radius: 8px;
+.navbar a {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
 }
 
-/* Sección Hero */
+.navbar a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 3px;
+  background: #00ffea;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.navbar a:hover {
+  color: #00ffea;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* ÍCONO DE PERFIL */
+.icon-link {
+  padding: 0;
+  margin-left: 10px;
+}
+
+
+/* Hero */
 .hero {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    margin-top: 80px;
+    background: linear-gradient(135deg, #ff2e63, #1e4d7b, #00ffea);
     text-align: center;
     padding: 100px 20px;
+    background-size: 300% 300%;
+    animation: gradientBG 8s ease infinite;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero h1 {
-    font-size: 3em;
+    font-size: 4em;
     color: #00ffea;
+    text-shadow: 2px 2px 6px #000;
 }
 
 .hero p {
     font-size: 1.5em;
-    margin-top: 10px;
+    margin-top: 15px;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px #000;
 }
 
-/* Estilo del logo */
-.hero .logo img {
-    width: 150px; 
-    height: auto;
-    margin: 20px 0; /* Espaciado superior e inferior */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 255, 234, 0.5);
-}
 
 /* Sección ¿Cómo se juega? */
 .como-jugar {
-    padding: 50px 20px;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .segmento {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 20px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    gap: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    flex-wrap: wrap;
 }
 
-.como-jugar .contenido {
-    max-width: 50%;
-    padding-right: 20px;
+.segmento .contenido {
+    flex: 1;
+    min-width: 300px;
 }
 
-.como-jugar h2 {
+.segmento .contenido h2 {
     font-size: 2.5em;
-    color: #ffffff;
     margin-bottom: 20px;
+    color: #ffffff;
 }
 
-.como-jugar p {
+.segmento .contenido p {
     font-size: 1.2em;
     line-height: 1.6;
+    color: #f1f1f1;
 }
 
-/* Estilo de las imágenes dentro de los segmentos */
-.como-jugar .imagen img {
-    width: 100%; 
-    max-width: 350px; 
-    height: auto; 
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 255, 234, 0.5);
+.segmento .imagen {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
 }
 
+.segmento .imagen img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 255, 234, 0.4);
+    transition: transform 0.3s ease;
+}
 
-.como-jugar img {
+.segmento .imagen img:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 255, 234, 0.5);
+  }
+
+  .navbar {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  padding-right: 180px;
+}
+
 }
